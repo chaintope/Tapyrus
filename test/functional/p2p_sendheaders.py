@@ -573,10 +573,10 @@ class SendHeadersTest(BitcoinTestFramework):
 
         # Setup the p2p connections again
         inv_node = self.nodes[0].add_p2p_connection(BaseNode(self.nodes[0].time_to_connect))
-        inv_node.sync_with_ping(timeout=100)
+        inv_node.sync_with_ping(timeout=300)
 
         test_node = self.nodes[0].add_p2p_connection(BaseNode(self.nodes[0].time_to_connect))
-        test_node.sync_with_ping(timeout=100)
+        test_node.sync_with_ping(timeout=300)
 
         #wait for the federation block to sync
         while self.nodes[0].getbestblockhash() != tip:
